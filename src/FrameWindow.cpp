@@ -3046,6 +3046,11 @@ pGlobals->m_pcmainwin->m_closealltrans = 1;
 			pcquerywnd->ShowTemplateDlg();
 		break;
 
+	case ACCEL_FORMATSELECTEDQUERY:
+		if(hwndactive)
+			pcquerywnd->FormatterCurrentSelectSqlStatement();
+		break;
+
 	case ID_EDIT_INSERTFILE:
 		pcquerywnd->HandleFileOpen(SQLINDEX, wyTrue);
 		break;

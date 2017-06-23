@@ -43,6 +43,7 @@
 #include "TableTabInterfaceTabMgmt.h"
 #include "OtherDialogs.h"
 #include "List.h"
+#include "SQLFormatter.h"
 
 #ifndef COMMUNITY
 #include "ConnectionEnt.h"
@@ -3771,6 +3772,68 @@ MDIWindow::ShowTemplateDlg()
 	    SetFocus(peditorbase->m_hwnd);		
 
 	return wyTrue;
+}
+
+// Function to formatter sql
+// The function returns the STRING RESOURCE ID of the item selected.
+// We use this resource to get a string in the resource and add it to the edit box at the current
+// Selection.
+wyBool
+MDIWindow::FormatterCurrentSelectSqlStatement()
+{
+    TabTypes	*ptabeditor  = NULL; 
+	EditorBase	*peditorbase = NULL;
+    wyString    temp;
+
+	ptabeditor = m_pctabmodule->GetActiveTabType();
+	
+	if(ptabeditor->m_iseditwnd == wyFalse)
+    {
+		yog_message(m_hwnd, _(L"Please make the Query window visible to use this option"), pGlobals->m_appname.GetAsWideChar(), MB_OK | MB_ICONINFORMATION);
+		return wyFalse;
+	}
+
+    wyInt32			    start, end, curpos, curline; 
+    wyString            query, tempdump;
+    wyChar              *tmp = NULL;
+    SQLFormatter        formatter;
+
+	ptabeditor = m_pctabmodule->GetActiveTabType();
+
+	peditorbase	= m_pctabmodule->GetActiveTabType()->m_peditorbase; 
+
+    start	= SendMessage(peditorbase->m_hwnd, SCI_GETSELECTIONSTART, 0, 0);
+	end		= SendMessage(peditorbase->m_hwnd, SCI_GETSELECTIONEND, 0, 0);
+    curpos	= SendMessage(peditorbase->m_hwnd, SCI_GETCURRENTPOS, 0, 0);
+	curline = SendMessage(peditorbase->m_hwnd, SCI_LINEFROMPOSITION, curpos, 0);
+
+	query.Clear();
+    if((end - start) > 1)
+    {
+        tmp = AllocateBuff(end - start + 1);
+		SendMessage(peditorbase->m_hwnd, SCI_GETSELTEXT, 0, (LPARAM)tmp);
+        tempdump.SetAs(tmp);
+        free(tmp);
+    }
+    else
+    {
+        GetCurrentQuery(peditorbase->m_hwnd, GetActiveWin(), &tempdump, curpos);
+    }
+
+	GetFormatQuery(&tempdump, wyFalse);
+
+	peditorbase->m_isdiscardchange = wyTrue;
+	SendMessage(peditorbase->m_hwnd, SCI_REPLACESEL, TRUE,(LPARAM)tempdump.GetString());
+	SendMessage(peditorbase->m_hwnd, SCI_SETSAVEPOINT, 0, 0);
+    SendMessage(peditorbase->m_hwnd, SCI_EMPTYUNDOBUFFER, 0, 0);
+    peditorbase->m_isdiscardchange = wyFalse;
+
+	EditorFont::SetLineNumberWidth(peditorbase->m_hwnd);
+
+	SetFocus(peditorbase->m_hwnd);
+
+	return wyTrue;
+
 }
 
 // Window procedure for the template dialog box.
