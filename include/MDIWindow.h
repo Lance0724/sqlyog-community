@@ -628,6 +628,12 @@ public:
 	@returns wyTrue on success else wyFalse
     */
 	wyBool				ShowTemplateDlg();
+	
+	/// Function to show the template dialog box and set the text in the edit box.
+    /**
+	@returns wyTrue on success else wyFalse
+    */
+	wyBool				FormatterCurrentSelectSqlStatement();
 
     /// Initializes the template dialog box with the template items.
     /**
