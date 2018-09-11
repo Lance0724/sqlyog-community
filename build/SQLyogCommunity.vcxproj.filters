@@ -339,9 +339,6 @@
     <ClCompile Include="..\src\sqlite3.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="RegisterEmail.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="..\src\jsoncpp.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>

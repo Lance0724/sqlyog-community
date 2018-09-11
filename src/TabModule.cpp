@@ -257,7 +257,7 @@ TabModule::Create(MDIWindow * wnd)
 wyBool				
 TabModule::CreateCommunityTabHeader()
 {
-#ifdef COMMUNITY
+#ifndef COMMUNITY
 	m_cribbon = new CommunityRibbon();
 	if(m_cribbon->CreateRibbon(m_hwndparent) == wyTrue)
 		m_hwndcommtytitle = m_cribbon->m_hwnd;
@@ -1754,14 +1754,14 @@ TabModule::Resize(wyBool issetredraw)
 		SendMessage(m_hwnd, WM_SETREDRAW, FALSE, NULL);
 
 #ifdef COMMUNITY
-	wyInt32 headvpos = 0;
-	
-	headvpos = vpos;
-    headht = 20;
-	VERIFY(MoveWindow(m_hwndcommtytitle, hpos, headvpos, width, headht, TRUE));
-    InvalidateRect(m_hwndcommtytitle, NULL, TRUE);
-    UpdateWindow(m_hwndcommtytitle);
-	height = height - 20;
+	//wyInt32 headvpos = 0;
+	//
+	//headvpos = vpos;
+ //   headht = 20;
+	//VERIFY(MoveWindow(m_hwndcommtytitle, hpos, headvpos, width, headht, TRUE));
+ //   InvalidateRect(m_hwndcommtytitle, NULL, TRUE);
+ //   UpdateWindow(m_hwndcommtytitle);
+	//height = height - 20;
 	
 #endif
 

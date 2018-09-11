@@ -1,5 +1,7 @@
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2019
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SQLyogCommunity", "SQLyogCommunity.vcxproj", "{040BE517-FD94-46E0-89F6-07F29CA8750E}"
 EndProject
 Global
@@ -18,8 +20,8 @@ Global
 		{040BE517-FD94-46E0-89F6-07F29CA8750E}.Debug|x64.Build.0 = Debug|x64
 		{040BE517-FD94-46E0-89F6-07F29CA8750E}.Release|Win32.ActiveCfg = Release|Win32
 		{040BE517-FD94-46E0-89F6-07F29CA8750E}.Release|Win32.Build.0 = Release|Win32
-		{040BE517-FD94-46E0-89F6-07F29CA8750E}.Release|x64.ActiveCfg = Release|Win32
-		{040BE517-FD94-46E0-89F6-07F29CA8750E}.Release|x64.Build.0 = Release|Win32
+		{040BE517-FD94-46E0-89F6-07F29CA8750E}.Release|x64.ActiveCfg = Release|x64
+		{040BE517-FD94-46E0-89F6-07F29CA8750E}.Release|x64.Build.0 = Release|x64
 		{040BE517-FD94-46E0-89F6-07F29CA8750E}.Template|Win32.ActiveCfg = Template|Win32
 		{040BE517-FD94-46E0-89F6-07F29CA8750E}.Template|Win32.Build.0 = Template|Win32
 		{040BE517-FD94-46E0-89F6-07F29CA8750E}.Template|x64.ActiveCfg = Template|Win32
@@ -27,5 +29,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7717231C-3D48-4E1C-924A-DB4A9A946EA2}
 	EndGlobalSection
 EndGlobal

@@ -29,17 +29,18 @@
   <PropertyGroup Label="Globals">
     <ProjectGuid>{040BE517-FD94-46E0-89F6-07F29CA8750E}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
+    <WindowsTargetPlatformVersion>10.0.17134.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <CharacterSet>MultiByte</CharacterSet>
-    <PlatformToolset>v140</PlatformToolset>
+    <PlatformToolset>v141</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <CharacterSet>MultiByte</CharacterSet>
-    <PlatformToolset>v140</PlatformToolset>
+    <PlatformToolset>v141</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
@@ -394,7 +395,6 @@
     <ClCompile Include="..\src\wySqlite.cpp" />
     <ClCompile Include="..\src\wyString.cpp" />
     <ClCompile Include="..\src\wyTheme.cpp" />
-    <ClCompile Include="RegisterEmail.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\include\Announcements.h" />
