@@ -1,0 +1,5 @@
+bin/
+build/
+
+include/SQLyog.aps
+localization/compile_log.log

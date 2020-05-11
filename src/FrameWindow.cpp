@@ -7424,10 +7424,10 @@ FrameWindow::HandleMenuOnNoConnection(WPARAM wparam, LPARAM lparam)
 		EnableMenuItem((HMENU)wparam, MNU_SCHEMADESIGNER, MF_BYPOSITION | MF_GRAYED);
         EnableMenuItem((HMENU)wparam, MNU_REBUILDTAGS, MF_BYPOSITION | MF_GRAYED);
 
-        if(m_connection->m_enttype != ENT_ULTIMATE && m_connection->m_enttype != ENT_TRIAL)
-        {
-            RemoveMenu((HMENU)wparam, ID_VDDTOOL, MF_BYCOMMAND);
-        }
+        //if(m_connection->m_enttype != ENT_ULTIMATE && m_connection->m_enttype != ENT_TRIAL)
+        //{
+        //    RemoveMenu((HMENU)wparam, ID_VDDTOOL, MF_BYCOMMAND);
+        //}
 	}
 	else if((LOWORD(lparam)) == MNUTRANSACTION_INDEX - 1)
     {

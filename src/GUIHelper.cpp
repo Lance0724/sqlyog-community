@@ -624,10 +624,10 @@ ChangeEditMenuItem(HMENU hmenu)
 		HandleFomatterOptionsPRO(hmenu);
 
     //ToRemove all EXPLAIN OPTIONS if this is not ULTIMATE
-    if(pGlobals->m_pcmainwin->m_connection->m_enttype != ENT_ULTIMATE && pGlobals->m_pcmainwin->m_connection->m_enttype != ENT_TRIAL)
-    {
-        HandleRemoveExplainOptions(hmenu);
-    }
+    //if(pGlobals->m_pcmainwin->m_connection->m_enttype != ENT_ULTIMATE && pGlobals->m_pcmainwin->m_connection->m_enttype != ENT_TRIAL)
+    //{
+    //    HandleRemoveExplainOptions(hmenu);
+    //}
 
 	if(!pcquerywnd)
 		return wyTrue;
@@ -676,7 +676,7 @@ ChangeEditMenuItem(HMENU hmenu)
 		VERIFY(EnableMenuItem(hmenu, ACCEL_EXECUTEALL, MF_ENABLED)!= -1);
 		VERIFY(EnableMenuItem(hmenu, IDM_EDIT_GOTO, MF_ENABLED)!= -1);
 
-        if(pGlobals->m_pcmainwin->m_connection->m_enttype == ENT_ULTIMATE || pGlobals->m_pcmainwin->m_connection->m_enttype == ENT_TRIAL)
+        //if(pGlobals->m_pcmainwin->m_connection->m_enttype == ENT_ULTIMATE || pGlobals->m_pcmainwin->m_connection->m_enttype == ENT_TRIAL)
         {   
             SetExplainMenuItems(hmenu, pceditorbase->m_hwnd);
             //VERIFY(EnableMenuItem(hmenu, ID_EXPLAIN_EXPLAIN, MF_ENABLED)!= -1);
