@@ -514,12 +514,13 @@ BEGIN
             MENUITEM "EXPLAIN EXTENDED <Query>",    ID_EXPLAIN_EXTENDED
         END
         MENUITEM SEPARATOR
-        POPUP "S&QL Formatter"
-        BEGIN
-            MENUITEM "Format &Current Query\tF12",  ACCEL_FORMATCURRENTQUERY
-            MENUITEM "Format &Selected Query\tCtrl+F12", ACCEL_FORMATSELECTEDQUERY
-            MENUITEM "Format &All Queries\tShift+F12", ACCEL_FORMATALLQUERIES
-        END
+        //POPUP "S&QL Formatter"
+        //BEGIN
+        //    MENUITEM "Format &Current Query\tF12",  ACCEL_FORMATCURRENTQUERY
+        //    MENUITEM "Format &Selected Query\tCtrl+F12", ACCEL_FORMATSELECTEDQUERY
+        //    MENUITEM "Format &All Queries\tShift+F12", ACCEL_FORMATALLQUERIES
+        //END
+		MENUITEM "Format &Selected Query\tCtrl+F12", ACCEL_FORMATSELECTEDQUERY
         MENUITEM "&Insert Templates...\tCtrl+Shift+T", ID_EDIT_INSERTTEMPLATES
         MENUITEM SEPARATOR
         MENUITEM "&Undo\tCtrl+Z",               IDM_EDIT_UNDO

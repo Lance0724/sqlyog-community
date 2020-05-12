@@ -3817,15 +3817,15 @@ MDIWindow::FormatterCurrentSelectSqlStatement()
     }
     else
     {
-        GetCurrentQuery(peditorbase->m_hwnd, GetActiveWin(), &tempdump, curpos);
+		GetCurrentQueryForAuto(peditorbase->m_hwnd, GetActiveWin(), &tempdump, start);
+		SendMessage(peditorbase->m_hwnd, SCI_SETSELECTIONSTART, curpos - start, 0);
+		SendMessage(peditorbase->m_hwnd, SCI_SETSELECTIONEND, curpos - start + tempdump.GetLength(), 0);
     }
 
 	GetFormatQuery(&tempdump, wyFalse);
 
 	peditorbase->m_isdiscardchange = wyTrue;
 	SendMessage(peditorbase->m_hwnd, SCI_REPLACESEL, TRUE,(LPARAM)tempdump.GetString());
-	SendMessage(peditorbase->m_hwnd, SCI_SETSAVEPOINT, 0, 0);
-    SendMessage(peditorbase->m_hwnd, SCI_EMPTYUNDOBUFFER, 0, 0);
     peditorbase->m_isdiscardchange = wyFalse;
 
 	EditorFont::SetLineNumberWidth(peditorbase->m_hwnd);
