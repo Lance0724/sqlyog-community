@@ -3817,9 +3817,17 @@ MDIWindow::FormatterCurrentSelectSqlStatement()
     }
     else
     {
+		wyInt32 ltrimcount = 0;
+		wyInt32 rtrimcount = 0;
+		wyInt32 origincount = 0;
+
 		GetCurrentQueryForAuto(peditorbase->m_hwnd, GetActiveWin(), &tempdump, start);
-		SendMessage(peditorbase->m_hwnd, SCI_SETSELECTIONSTART, curpos - start, 0);
-		SendMessage(peditorbase->m_hwnd, SCI_SETSELECTIONEND, curpos - start + tempdump.GetLength(), 0);
+		tempdump.LTrim(&ltrimcount);
+		tempdump.RTrim(&rtrimcount);
+		origincount = tempdump.GetLength();
+
+		SendMessage(peditorbase->m_hwnd, SCI_SETSELECTIONSTART, curpos - start + ltrimcount, 0);
+		SendMessage(peditorbase->m_hwnd, SCI_SETSELECTIONEND, curpos - start + ltrimcount + origincount, 0);
     }
 
 	GetFormatQuery(&tempdump, wyFalse);
