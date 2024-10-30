@@ -42,6 +42,7 @@
 #include "TableTabInterface.h"
 #include "TableTabInterfaceTabMgmt.h"
 #include "OtherDialogs.h"
+#include "SQLFormatter.h"
 #include "List.h"
 #include "SQLFormatter.h"
 

@@ -1,5 +1,11 @@
 bin/
 build/
+src/cryptopp700/win32
+src/cryptopp700/x64
+include/SQLyog.aps
+localization/compile_log.log
+bin/
+build/
 
 include/SQLyog.aps
 localization/compile_log.log
