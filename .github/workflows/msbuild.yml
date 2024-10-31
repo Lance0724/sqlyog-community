@@ -20,7 +20,7 @@ env:
   # https://docs.github.com/actions/learn-github-actions/managing-complex-workflows#using-a-build-matrix
   BUILD_CONFIGURATION: Release
   BUILD_PLATFORM: x64
-  PROJECTCONFIGURATION: "Release|x64"
+  PROJECTCONFIGURATION: Release\|x64
 
 permissions:
   contents: read
