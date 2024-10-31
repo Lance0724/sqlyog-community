@@ -48,4 +48,4 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: Release_x64_exe
-        path: "..\\bin"
+        path: bin
