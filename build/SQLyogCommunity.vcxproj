@@ -94,22 +94,6 @@
     <IntDir Condition="'$(Configuration)|$(Platform)'=='Template|x64'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
     <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</GenerateManifest>
   </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <ExecutablePath>$(ExecutablePath)</ExecutablePath>
-    <IncludePath>$(ProjectDir)..\src\cryptopp700;$(IncludePath)</IncludePath>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <ExecutablePath>$(ExecutablePath)</ExecutablePath>
-    <IncludePath>$(ProjectDir)..\src\cryptopp700;$(IncludePath)</IncludePath>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <ExecutablePath>$(ExecutablePath)</ExecutablePath>
-    <IncludePath>$(ProjectDir)..\src\cryptopp700;$(IncludePath)</IncludePath>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <ExecutablePath>$(ExecutablePath)</ExecutablePath>
-    <IncludePath>$(ProjectDir)..\src\cryptopp700;$(IncludePath)</IncludePath>
-  </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <Optimization>Disabled</Optimization>
@@ -125,7 +109,7 @@
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>shfolder.lib;version.lib;Ws2_32.lib;odbc32.lib;odbccp32.lib;wsock32.lib;comctl32.lib;htmlhelp.lib;wininet.lib;imm32.lib;gdiplus.lib;ole32.lib;msimg32.lib;sqlite3.lib;mariadbclient.lib;HTMLayout.lib;pcre.lib;Rpcrt4.lib;shlwapi.lib;vld.lib;winmm.lib;ssleay32MD.lib;libeay32MD.lib;wevtapi.lib;cryptlib.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>shfolder.lib;version.lib;Ws2_32.lib;odbc32.lib;odbccp32.lib;wsock32.lib;comctl32.lib;htmlhelp.lib;wininet.lib;imm32.lib;gdiplus.lib;ole32.lib;msimg32.lib;sqlite3.lib;mariadbclient.lib;HTMLayout.lib;pcre.lib;Rpcrt4.lib;shlwapi.lib;vld.lib;winmm.lib;ssleay32MD.lib;libeay32MD.lib;wevtapi.lib;cryptlib.lib;tinyxml2.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
       <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
       <IgnoreSpecificDefaultLibraries>LIBCMT;msvcrt;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
@@ -139,9 +123,6 @@
     <Manifest>
       <EnableDPIAwareness>false</EnableDPIAwareness>
     </Manifest>
-    <PreBuildEvent>
-      <Command>$(BuildSystem) ..\src\cryptopp700\cryptlib.vcxproj /p:configuration=Debug /p:platform=win32</Command>
-    </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
@@ -157,7 +138,7 @@
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>shfolder.lib;version.lib;Ws2_32.lib;odbc32.lib;odbccp32.lib;wsock32.lib;comctl32.lib;htmlhelp.lib;wininet.lib;imm32.lib;gdiplus.lib;ole32.lib;msimg32.lib;sqlite3.lib;mariadbclient.lib;HTMLayout.lib;pcre.lib;Rpcrt4.lib;shlwapi.lib;vld.lib;winmm.lib;cryptlib.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>shfolder.lib;version.lib;Ws2_32.lib;odbc32.lib;odbccp32.lib;wsock32.lib;comctl32.lib;htmlhelp.lib;wininet.lib;imm32.lib;gdiplus.lib;ole32.lib;msimg32.lib;sqlite3.lib;mariadbclient.lib;HTMLayout.lib;pcre.lib;Rpcrt4.lib;shlwapi.lib;vld.lib;winmm.lib;cryptlib.lib;tinyxml2.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
       <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
       <IgnoreSpecificDefaultLibraries>LIBCMT; LIBC;LIBCD;msvcrt;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
@@ -173,9 +154,6 @@
     <ResourceCompile>
       <PreprocessorDefinitions>WIN64</PreprocessorDefinitions>
     </ResourceCompile>
-    <PreBuildEvent>
-      <Command>$(BuildSystem) ..\src\cryptopp700\cryptlib.vcxproj /p:configuration=Debug /p:platform=x64</Command>
-    </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -194,7 +172,7 @@
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>shfolder.lib;version.lib;Ws2_32.lib;odbc32.lib;odbccp32.lib;wsock32.lib;comctl32.lib;htmlhelp.lib;wininet.lib;imm32.lib;gdiplus.lib;ole32.lib;msimg32.lib;sqlite3.lib;mariadbclient.lib;HTMLayout.lib;pcre.lib;Rpcrt4.lib;shlwapi.lib;vld.lib;winmm.lib;wevtapi.lib;cryptlib.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>shfolder.lib;version.lib;Ws2_32.lib;odbc32.lib;odbccp32.lib;wsock32.lib;comctl32.lib;htmlhelp.lib;wininet.lib;imm32.lib;gdiplus.lib;ole32.lib;msimg32.lib;sqlite3.lib;mariadbclient.lib;HTMLayout.lib;pcre.lib;Rpcrt4.lib;shlwapi.lib;vld.lib;winmm.lib;wevtapi.lib;cryptlib.lib;tinyxml2.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
       <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
       <IgnoreSpecificDefaultLibraries>LIBCD;msvcrt;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
@@ -210,9 +188,6 @@
     <Manifest>
       <EnableDPIAwareness>false</EnableDPIAwareness>
     </Manifest>
-    <PreBuildEvent>
-      <Command>$(BuildSystem) ..\src\cryptopp700\cryptlib.vcxproj /p:configuration=Release /p:platform=win32</Command>
-    </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
@@ -249,9 +224,6 @@
     <ResourceCompile>
       <PreprocessorDefinitions>WIN64</PreprocessorDefinitions>
     </ResourceCompile>
-    <PreBuildEvent>
-      <Command>$(BuildSystem) ..\src\cryptopp700\cryptlib.vcxproj /p:configuration=Release /p:platform=x64</Command>
-    </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Template|Win32'">
     <ClCompile>
@@ -297,8 +269,6 @@
     <ClCompile Include="..\src\ConnectionCommunity.cpp" />
     <ClCompile Include="..\src\ConnectionTab.cpp" />
     <ClCompile Include="..\src\CopyDatabase.cpp" />
-    <ClCompile Include="..\src\cryptopp700\filters.cpp" />
-    <ClCompile Include="..\src\cryptopp700\modes.cpp" />
     <ClCompile Include="..\src\CustGrid.cpp" />
     <ClCompile Include="..\src\CustomSaveDlg.cpp" />
     <ClCompile Include="..\src\CustTab.cpp" />
@@ -413,7 +383,6 @@
       <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)%(Filename)1.obj</ObjectFileName>
       <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(IntDir)%(Filename)1.obj</ObjectFileName>
     </ClCompile>
-    <ClCompile Include="..\src\tinyxml\tinyxml2.cpp" />
     <ClCompile Include="..\src\TunnelCommunity.cpp" />
     <ClCompile Include="..\src\UpgradeCheck.cpp" />
     <ClCompile Include="..\src\UrlEncode.cpp" />
